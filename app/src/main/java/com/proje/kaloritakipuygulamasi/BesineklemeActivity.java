@@ -187,12 +187,6 @@ public class BesineklemeActivity extends AppCompatActivity {
         });
 
         ekleButonu.setOnClickListener(new View.OnClickListener() {
-
-            /* Aşağıdaki kod şunları yapar:
-            * 1) seçilen index'in başını keser, ve hangi yiyeceğin olduğunun adını alır.
-            * 2) bu adı database'e gönderir, ve bu yiyeceğin kalorisini alır.
-            * 3) bu kaloriyi tarihiyle beraber database'e ekler.
-            * */
             @Override
             public void onClick(View v)
             {
