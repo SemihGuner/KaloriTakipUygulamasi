@@ -44,6 +44,7 @@ import java.util.List;
 public class BesineklemeActivity extends AppCompatActivity {
 
     int indis = -1;
+    String secilenYemek = "";
     int cal;
     List<String> datalist = new ArrayList<>();
     @Override
@@ -99,6 +100,7 @@ public class BesineklemeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
+                secilenYemek = yemeklistesi.getItemAtPosition(position).toString();
                 if (indis == position) {
                     // Zaten seçili olan öğe tıklandığında seçimini kaldır
                     indis = -1;
@@ -195,8 +197,7 @@ public class BesineklemeActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Kullanici kullanici = ktdb.kullaniciDao().loadFirstKullanici();
-                String yiyecek = datalist.get(indis);
-                String[] parts = yiyecek.split("\\|");
+                String[] parts = secilenYemek.split("\\|");
                 String kalori = parts[2].replaceAll("[^0-9]", "");
                 cal = Integer.parseInt(kalori);
                 Log.i("Kalori", "cal: "+cal);
